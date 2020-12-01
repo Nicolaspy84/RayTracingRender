@@ -5,7 +5,7 @@ Advanced Computer Graphics - Ray Tracing Rendering Engine
 
 This is a ray tracing rendering engine entirely made in C++.
 This engine is based on the properties of light and aims at replicating what happens in real life to render images.
-By Nicolas Buisson.
+By Nicolas Buisson, using Nori, the educational ray tracer. See Nori at https://github.com/wjakob/nori.
 
 # Project renders and functionnalities
 
