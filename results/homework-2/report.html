@@ -1,0 +1,66 @@
+**Homework 2**
+
+Student name: Buisson Nicolas
+
+Sciper number: 285607
+
+Octree construction (50 pts)
+============================
+
+Node class:
+-----------
+In order to construct the octree, I decided to first create the Node class. This class contains 9 pointers: 8 pointers to subnodes (using the same Node class) and one pointer to a dynamic vector of uint32_t values, containing the ids of the triangles in the node (usually, this vector shouldn't contain more than 20 values or so).
+
+If a child pointer is set to nullptr, it means there are no triangles in this subnode (not that this still requires to allocate memory for this nullptr). Only leaf nodes should contain a non nullptr to a vector of triangle ids: all triangles overlapping with (not only contained in) the corresponding bounding box will be in this vector. This means one triangle can be stored in multiple leaf nodes if it overlaps several boxes.
+
+Note: the bounding box of each corresponding node is not stored, as it's a "large" object and can easily be recomputed when exploring the tree if needed, at any time.
+
+Building the tree:
+------------------
+This is invoked by the build() function in the Accel class. This will construct the tree and return a single pointer to a Node instance (which is then stored in the current Accel instance). The idea was to make a recurrent function, everytime splitting into 8 (for the 8 subnodes) and creating new arrays for the triangles overlapping with each sub bounding box. When only a small number of triangles is left in a node (ie less than 10), the function returns a leaf node containing those triangles. If no triangles are found, the function returns a nullptr. Finally, I added a security (which is actually very important): when we are going too deep into the tree, we stop (ie generate a larger leaf than usuall) to avoid some cases where we can't get to the 10 triangles threshold.
+
+Statistics:
+-----------
+Some stats on my model:
+
+* Number of interior nodes : 1 115 944
+* Number of leaf nodes : 942 791
+* Number of triangles stored : 5 136 487
+* Average number of triangles per leaf node : 5.448172
+* Size of a memory pointer : 8 bytes
+* Size of a triangle id : 4 bytes
+* Total memory allocated : 100 893 916 bytes
+* Time for building the acceleration structure : 1.7s
+
+
+Ray traversal (25 pts)
+======================
+For the first ray traversal tests, I implemented a system which basically does the same as the build algorithm. When exploring a node, we check if it's a leaf node: in this case, we look for an intersection and store this intersection. If it's not a leaf node, we explore the subnodes and reiterate. We keep the closest intersection. We build the sub boxes at every iteration (since they haven't been stored in the Node instances), and only test boxes that intersect with the ray.
+The scene render took about 18s (on a 4 core, 8 threads i7 processor), with the brute force algorithm not even able to render a few hundred pixels in 5 minutes of time, so the improvement is absolutely huge (which was to be expected: for 500 000 triangles, with a ).
+
+Improved ray traversal (25 pts)
+===============================
+Here the idea is very simple: instead of going through the sub nodes (ie sub boxes) in a "random" maner, we look first through the ones which are the closest to the origin of the ray. To do so, we sort sub nodes by distance to the origin of the ray. Once an intersection is found in a leaf node, we can (almost, we have to go through all the triangles of the leaf node) immediatly terminate the algorithm, since all other potential triangles are further away. The improvements here are important as well: it took around 12s on my computer to render the scene.
+
+Surface normal visualization of the Ajax bust:
+<div class="twentytwenty-container">
+    <img src="ajax-normals-ref.png" alt="Reference">
+    <img src="ajax-normals.png" alt="Mine">
+</div>
+
+Feedback
+========
+
+* For the time spent on the assignment, I'm not really able to tell: I've spend a lot of time on it for a weekly homework (but I love this project, so I don't mind spending more time than necessary).
+* Some good information would have been the time required to render the scene: an idea of the objective would have been usefull (to know if our algorithm will be good enough for future assignments, or if it will be too slow!).
+
+<!--- Markdeep & image comparison library - probably no need to change anything below -->
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="../resources/markdeep.min.js"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="../resources/jquery.event.move.js"></script>
+<script src="../resources/jquery.twentytwenty.js"></script>
+<link href="../resources/offcanvas.css" rel="stylesheet">
+<link href="../resources/twentytwenty.css" rel="stylesheet" type="text/css" />
+<script>
+$(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5});});
+</script>

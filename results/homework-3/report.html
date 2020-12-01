@@ -1,0 +1,98 @@
+**Homework 3**
+
+Student name: Buisson Nicolas
+
+Sciper number: 285607
+
+Monte Carlo Sampling (60 pts)
+=============================
+
+For each of these sections, don't forget to include necessary derivations as well as screenshots of passing $\chi^2$ tests from the <tt>warptest</tt> executable.
+
+Tent
+----
+Here is the mathematical justification of the implementation of the tent distribution in the warp class.
+
+<img src="tent.jpg" alt="Tent">
+    
+<img src="tentTest.png" alt="Tent distribution test">
+
+Uniform disk
+------------
+<img src="diskUnifTest.png" alt="Uniform disk test">
+
+Uniform sphere
+--------------
+<img src="sphereUnifTest.png" alt="Uniform sphere test">
+
+Uniform hemisphere
+------------------
+<img src="hemisphereUnifTest.png" alt="Uniform hemisphere test">
+
+Cosine hemisphere
+-----------------
+<img src="hemisphereCosTest.png" alt="Cos hemisphere test">
+
+Beckmann distribution
+---------------------
+Here is the mathematical justification of the implementation of the Beckmann distribution in the warp class.
+
+<img src="beckmann.jpg" alt="Beckmann">
+
+
+Test for alpha = 0.2
+
+<img src="beckmannTest02.png" alt="Beckmann distribution test alpha=0.2">
+    
+    
+Test for alpha = 0.4
+
+<img src="beckmannTest04.png" alt="Beckmann distribution test alpha=0.4">
+    
+    
+Test for alpha = 0.6
+
+<img src="beckmannTest06.png" alt="Beckmann distribution test alpha=0.6">
+    
+    
+Test for alpha = 0.8
+
+<img src="beckmannTest08.png" alt="Beckmann distribution test alpha=0.8">
+
+
+Test for alpha = 1
+
+<img src="beckmannTest1.png" alt="Beckmann distribution test alpha=1">
+
+Two simple rendering algorithms (40 pts)
+========================================
+
+Point lights
+------------
+
+Ajax bust illuminated by a point light source:
+<div class="twentytwenty-container">
+    <img src="ajax-simple-ref.png" alt="Reference">
+    <img src="ajax-simple.png" alt="Mine">
+</div>
+
+Ambient occlusion
+-----------------
+
+Ajax bust rendered using ambient occlusion:
+<div class="twentytwenty-container">
+    <img src="ajax-ao-ref.png" alt="Reference">
+    <img src="ajax-ao.png" alt="Mine">
+</div>
+
+
+<!--- Markdeep & image comparison library - probably no need to change anything below -->
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="../resources/markdeep.min.js"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="../resources/jquery.event.move.js"></script>
+<script src="../resources/jquery.twentytwenty.js"></script>
+<link href="../resources/offcanvas.css" rel="stylesheet">
+<link href="../resources/twentytwenty.css" rel="stylesheet" type="text/css" />
+<script>
+$(window).load(function(){$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.5});});
+</script>

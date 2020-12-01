@@ -1,0 +1,126 @@
+<?xml version="1.0" ?>
+<scene>
+	<integrator type="path_mis"/>
+	<sampler type="independent">
+		<integer name="sampleCount" value="32"/>
+	</sampler>
+	<camera type="perspective">
+		<float name="fov" value="45.6457478269396"/>
+		<float name="nearClip" value="0.10000000149011612"/>
+		<float name="farClip" value="100.0"/>
+		<integer name="width" value="960"/>
+		<integer name="height" value="540"/>
+		<transform name="toWorld">
+			<scale value="1.000000 1.000000 -1.000000"/>
+			<matrix value="0.3800363540649414,0.4335232377052307,-0.8170862793922424,-5.349564552307129,-0.9249001741409302,0.16712947189807892,-0.34150761365890503,-3.3750510215759277,-0.011492284946143627,0.8855085372924805,0.464480996131897,3.820000171661377,0.0,0.0,0.0,1.0"/>
+		</transform>
+	</camera>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Pot_standart_metal.obj"/>
+		<transform name="toWorld">
+			<matrix value="0.12225345522165298,0.0,0.0,-0.35707375407218933,0.0,-1.9917616000952876e-08,-0.12225345522165298,-1.4953864812850952,0.0,0.12225345522165298,-1.9917616000952876e-08,0.5487313866615295,0.0,0.0,0.0,1.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.737300,0.694100,0.909800"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Grass_grass.obj"/>
+		<transform name="toWorld">
+			<matrix value="0.12225345522165298,0.0,0.0,-0.35707375407218933,0.0,-1.9917616000952876e-08,-0.12225345522165298,-1.4953864812850952,0.0,0.12225345522165298,-1.9917616000952876e-08,0.5487313866615295,0.0,0.0,0.0,1.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.403900,0.796100,0.533300"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Table_Material.013.obj"/>
+		<transform name="toWorld">
+			<matrix value="-0.0029512939509004354,-9.84356205435688e-08,-0.6041935086250305,0.29873162508010864,-0.6041935086250305,4.808268228018164e-10,0.0029512939509004354,-2.3421878814697266,0.0,0.6042007207870483,-9.843679293908281e-08,0.49785566329956055,0.0,0.0,0.0,1.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.800000,0.800000,0.800000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Diamonds_Material.012.obj"/>
+		<transform name="toWorld">
+			<matrix value="0.04919169098138809,0.01609160006046295,-0.12783460319042206,-0.718658447265625,0.12798316776752472,0.009683169424533844,0.050467755645513535,-2.9110829830169678,0.01486391294747591,-0.13662993907928467,-0.011479002423584461,0.6028679609298706,0.0,0.0,0.0,1.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.800000,0.800000,0.800000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/BackLight2_Material.011.obj"/>
+		<transform name="toWorld">
+			<matrix value="1.6053142547607422,0.0,0.0,0.09445476531982422,0.0,-0.3569810688495636,1.5651192665100098,-13.007433891296387,0.0,-1.5651192665100098,-0.3569810688495636,3.25457501411438,0.0,0.0,0.0,1.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.800000,0.800000,0.800000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/BackLight1_Material.010.obj"/>
+		<transform name="toWorld">
+			<matrix value="1.6053142547607422,0.0,0.0,0.09445476531982422,0.0,-0.39700135588645935,-1.5554497241973877,9.759384155273438,0.0,1.5554497241973877,-0.39700135588645935,3.25457501411438,0.0,0.0,0.0,1.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.800000,0.800000,0.800000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/WallBack_Material.009.obj"/>
+		<transform name="toWorld">
+			<matrix value="3.166888404848578e-07,-2.0407211780548096,-2.023641586303711,-6.029139518737793,0.0,5.948340892791748,-0.6942588686943054,-2.5763931274414062,4.194670677185059,1.5407016462631873e-07,1.5278070009117073e-07,2.2751352787017822,0.0,0.0,0.0,1.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.800000,0.800000,0.800000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Wall_Material.009.obj"/>
+		<transform name="toWorld">
+			<matrix value="3.166888404848578e-07,-2.0407211780548096,-2.023641586303711,5.457122802734375,0.0,5.948340892791748,-0.6942588686943054,0.6096190214157104,4.194670677185059,1.5407016462631873e-07,1.5278070009117073e-07,2.2751352787017822,0.0,0.0,0.0,1.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.800000,0.800000,0.800000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Floor_Material.001.obj"/>
+		<transform name="toWorld">
+			<matrix value="7.732705593109131,-3.064401865005493,0.0,1.4238152503967285,2.5183496475219727,9.409383773803711,0.0,0.035314083099365234,0.0,0.0,10.424816131591797,-1.0931628942489624,0.0,0.0,0.0,1.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="1.000000,1.000000,1.000000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Ceiling_Material.001.obj"/>
+		<transform name="toWorld">
+			<matrix value="13.07918643951416,0.0,0.0,1.4238152503967285,0.0,15.915139198303223,0.0,0.035314083099365234,0.0,0.0,16.76592445373535,5.456138610839844,0.0,0.0,0.0,1.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="1.000000,1.000000,1.000000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/LightStand_Material.008.obj"/>
+		<transform name="toWorld">
+			<matrix value="0.05118400976061821,0.0,0.0,1.454491138458252,0.0,0.0008235588320530951,0.5343325734138489,-1.6819164752960205,0.0,-0.05123099312186241,0.008589610457420349,1.8746188879013062,0.0,0.0,0.0,1.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.800000,0.800000,0.800000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Light_Material.obj"/>
+		<transform name="toWorld">
+			<matrix value="0.5260087251663208,1.608059693703704e-14,9.197028560947729e-08,1.4513368606567383,0.0,0.5260087251663208,-9.197028560947729e-08,-1.6007158756256104,-9.197028560947729e-08,9.197028560947729e-08,0.5260087251663208,1.8788820505142212,0.0,0.0,0.0,1.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.800000,0.800000,0.800000"/>
+		</bsdf>
+	</mesh>
+</scene>

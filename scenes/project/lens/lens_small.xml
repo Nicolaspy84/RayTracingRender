@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+<scene>
+	<integrator type="path_mis"/>
+	<sampler type="independent">
+		<integer name="sampleCount" value="512"/>
+	</sampler>
+	<camera type="perspective">
+		<float name="fov" value="51.787296834264154"/>
+        <float name="lensRadius" value="0.1"/>
+        <float name="focalDistance" value="10.5"/>
+		<float name="nearClip" value="0.10000000149011612"/>
+		<float name="farClip" value="100.0"/>
+		<integer name="width" value="960"/>
+		<integer name="height" value="540"/>
+		<transform name="toWorld">
+			<scale value="1.000000 1.000000 -1.000000"/>
+			<matrix value="0.6143961548805237,-0.25479745864868164,0.7467232346534729,9.13764476776123,0.7889977097511292,0.1984119564294815,-0.5814768671989441,-7.963981628417969,0.0,0.9464200735092163,0.32293814420700073,5.052856922149658,0.0,0.0,0.0,1.0"/>
+		</transform>
+	</camera>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Light1.obj"/>
+		<transform name="toWorld">
+			<matrix value="1.4674596786499023,0.6753292083740234,1.1791914701461792,6.092991828918457,0.0,1.735530972480774,-0.9939478039741516,-7.848820209503174,-1.3588826656341553,0.729289174079895,1.2734109163284302,8.138282775878906,0.0,0.0,0.0,1.0"/>
+		</transform>
+        <emitter type="area">
+            <color name="radiance" value="20 20 20"/>
+        </emitter>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Sphere.obj"/>
+		<transform name="toWorld">
+			<matrix value="0.5,0.0,0.0,-1.5846023559570312,0.0,0.5,0.0,3.182593822479248,0.0,0.0,0.5,1.9218838214874268,0.0,0.0,0.0,1.0"/>
+		</transform>
+        <bsdf type="merl">
+            <string name="name" value="brdfs/green-latex.binary"/>
+        </bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Sphere.obj"/>
+		<transform name="toWorld">
+			<matrix value="0.5,0.0,0.0,-1.5463417768478394,0.0,0.5,0.0,1.573425531387329,0.0,0.0,0.5,1.9218838214874268,0.0,0.0,0.0,1.0"/>
+		</transform>
+        <bsdf type="merl">
+            <string name="name" value="brdfs/green-latex.binary"/>
+        </bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Sphere.obj"/>
+		<transform name="toWorld">
+			<matrix value="0.5,0.0,0.0,-0.5859837532043457,0.0,0.5,0.0,-0.6102473735809326,0.0,0.0,0.5,1.9218838214874268,0.0,0.0,0.0,1.0"/>
+		</transform>
+        <bsdf type="merl">
+            <string name="name" value="brdfs/green-latex.binary"/>
+        </bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Sphere.obj"/>
+		<transform name="toWorld">
+			<matrix value="0.5,0.0,0.0,0.7704885005950928,0.0,0.5,0.0,-2.755828857421875,0.0,0.0,0.5,1.9218838214874268,0.0,0.0,0.0,1.0"/>
+		</transform>
+        <bsdf type="merl">
+            <string name="name" value="brdfs/green-latex.binary"/>
+        </bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Sphere.obj"/>
+		<transform name="toWorld">
+			<matrix value="0.5,0.0,0.0,1.9738283157348633,0.0,0.5,0.0,-4.393560409545898,0.0,0.0,0.5,1.9218838214874268,0.0,0.0,0.0,1.0"/>
+		</transform>
+        <bsdf type="merl">
+            <string name="name" value="brdfs/green-latex.binary"/>
+        </bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/WallRight.obj"/>
+		<transform name="toWorld">
+			<matrix value="10.079999923706055,0.0,0.0,0.37757742404937744,0.0,-1.9320434319070046e-07,-1.0,6.164262771606445,0.0,4.420000076293945,-4.371138828673793e-08,3.672574520111084,0.0,0.0,0.0,1.0"/>
+		</transform>
+        <bsdf type="diffuse">
+            <color name="albedo" value="0.679746,0.765382,0.800000"/>
+        </bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/WallLeft.obj"/>
+		<transform name="toWorld">
+			<matrix value="-2.0019815849536826e-07,0.0,1.0,-6.771002769470215,0.0,9.519999504089355,0.0,0.15643003582954407,-4.579999923706055,0.0,-4.371138828673793e-08,4.412574768066406,0.0,0.0,0.0,1.0"/>
+		</transform>
+        <bsdf type="diffuse">
+            <color name="albedo" value="0.679746,0.765382,0.800000"/>
+        </bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Floor.obj"/>
+		<transform name="toWorld">
+			<matrix value="10.4399995803833,0.0,0.0,-0.6224231719970703,0.0,12.139999389648438,0.0,0.0764303207397461,0.0,0.0,1.0,1.4359216690063477,0.0,0.0,0.0,1.0"/>
+		</transform>
+		<bsdf type="diffuse">
+			<color name="albedo" value="0.679746,0.765382,0.800000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Sphere.obj"/>
+		<transform name="toWorld">
+			<matrix value="0.5,0.0,0.0,3.1142234802246094,0.0,0.5,0.0,-5.710761070251465,0.0,0.0,0.5,1.9218837022781372,0.0,0.0,0.0,1.0"/>
+		</transform>
+        <bsdf type="merl">
+            <string name="name" value="brdfs/green-latex.binary"/>
+        </bsdf>
+	</mesh>
+</scene>
